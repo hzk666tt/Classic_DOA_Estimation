@@ -5,5 +5,6 @@ Classic DOA estimation algorithm learning record of millimeter wave radar.
 
 ## 项目文档构成
 
-'xxx_sim.m'为绘图程序
-'DOA_xxx.m'为算法程序
+`xxx_sim.m`为绘图程序
+
+`DOA_xxx.m`为算法程序
