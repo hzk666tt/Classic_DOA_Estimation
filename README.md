@@ -7,11 +7,7 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 `xxx_sim.m`为绘图程序。
 
-`xxx_sim.m` is the drawing program.
-
 `DOA_xxx.m`为算法程序。
-
-`Doa_xxx.m` is the algorithm program.
 
 ## Project submission record 项目递交记录
 
