@@ -3,7 +3,7 @@ function MUSIC_output = MUSIC_DOA(X, target_num, d_lambda, Phi_set)
     % target_num: 信源数
     % d_lambda: 阵元间距波长比
     % Phi_set: 角度区间
-    % MVDR_output: DOA估计谱
+    % MUSIC_output: DOA估计谱
 
     row = size(X, 1);
     %column = size(X, 2);
