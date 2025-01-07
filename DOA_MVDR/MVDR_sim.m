@@ -22,9 +22,9 @@ X = A * Signal;
 X = awgn(X, snr, 'measured'); % 加白噪声
 
 % DOA estimation
-%Linewidth = 1.5;
-result_MVDR = MVDR_DOA(X, target_num, d_lambda, Phi_set);
-%plot(Phi_set, result_MVDR, '--', 'Linewidth', Linewidth); hold on;
-plot(Phi_set, result_MVDR, '--'); hold on;
+plot(Phi_set, result_MVDR, '-', 'Color', 'b'); hold on;
+xlabel('Degree/°'); ylabel('Normalized power amplitude');
+legend('MVDR', 'Color', 'none');
 set(gca, 'color', 'none', 'FontName', 'Times New Roman', 'LooseInset', get(gca, 'TightInset'));
-ax = gca; copygraphics(ax, 'ContentType', 'vector', 'BackgroundColor', 'none');
+ax = gca;
+copygraphics(ax, 'ContentType', 'vector', 'BackgroundColor', 'none');
