@@ -22,9 +22,9 @@ X = A * Signal;
 X = awgn(X, snr, 'measured'); % 加白噪声
 
 % DOA estimation
-%Linewidth = 1.5;
-result_CBF = CBF_DOA(X, target_num, d_lambda, Phi_set);
-%plot(Phi_set, result_CBF, ':', 'Linewidth', Linewidth); hold on;
-plot(Phi_set, result_CBF, ':'); hold on;
-set(gca, 'color', 'none', 'FontName', 'Times New Roman', 'LooseInset', get(gca, 'TightInset')); % 设置背景为透明，字体为新罗马，图窗铺满窗口
-ax = gca; copygraphics(ax, 'ContentType', 'vector', 'BackgroundColor', 'none'); % 复制透明背景位图到剪切板
+plot(Phi_set, result_CBF, '--', 'Color', 'm'); hold on;
+xlabel('Degree/°'); ylabel('Normalized power amplitude');
+legend('CBF', 'Color', 'none');
+set(gca, 'color', 'none', 'FontName', 'Times New Roman', 'LooseInset', get(gca, 'TightInset'));
+ax = gca;
+copygraphics(ax, 'ContentType', 'vector', 'BackgroundColor', 'none');
