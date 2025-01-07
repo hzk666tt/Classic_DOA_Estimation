@@ -9,7 +9,7 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 `DOA_xxx.m`为算法程序。
 
-**注意**：查看单一算法效果只需要在对应文件目录下运行`xxx_sim.m`即可。若使用`United_sim`进行算法联合对比时，需将各个文件目录下的`DOA_xxx.m`算法程序放置于同一文件夹内。
+**注意**：查看单一算法效果只需要在对应文件目录下运行`xxx_sim.m`即可。若使用`United_sim.m`进行算法联合对比时，需将各个文件目录下的`DOA_xxx.m`算法程序放置于同一文件夹内。
 
 ## 项目递交记录
 
@@ -17,4 +17,4 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 2025.1.6 递交`MVDR_sim.m`和`DOA_MVDR.m`。
 
-2025.1.7 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim`。
+2025.1.7 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim.m`。
