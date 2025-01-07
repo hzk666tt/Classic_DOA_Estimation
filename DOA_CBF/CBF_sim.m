@@ -22,6 +22,7 @@ X = A * Signal;
 X = awgn(X, snr, 'measured'); % 加白噪声
 
 % DOA estimation
+result_CBF = CBF_DOA(X, target_num, d_lambda, Phi_set);
 plot(Phi_set, result_CBF, '--', 'Color', 'm'); hold on;
 xlabel('Degree/°'); ylabel('Normalized power amplitude');
 legend('CBF', 'Color', 'none');
