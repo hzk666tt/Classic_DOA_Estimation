@@ -9,6 +9,8 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 `DOA_xxx.m`为算法程序。
 
+*注意*：使用`United_sim`进行算法联合对比时，需将各个文件目录下的`DOA_xxx.m`算法程序放置于同一文件夹内。
+
 ## 项目递交记录
 
 2025.1.5 递交`CBF_sim.m`和`DOA_CBF.m`。
