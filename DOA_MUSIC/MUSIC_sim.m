@@ -22,6 +22,7 @@ X = A * Signal;
 X = awgn(X, snr, 'measured'); % 加白噪声
 
 % DOA estimation
+result_MUSIC = MUSIC_DOA(X, target_num, d_lambda, Phi_set);
 plot(Phi_set, result_MUSIC, '-', 'Color', 'r'); hold on;
 xlabel('Degree/°'); ylabel('Normalized power amplitude');
 legend('MUSIC', 'Color', 'none');
