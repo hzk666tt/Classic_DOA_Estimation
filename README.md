@@ -18,3 +18,5 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 2025.1.6 递交`MVDR_sim.m`和`DOA_MVDR.m`。
 
 2025.1.7 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim.m`。
+
+2025.1.7 增加谱峰搜索搜索段。
