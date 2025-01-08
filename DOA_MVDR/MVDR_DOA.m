@@ -1,4 +1,4 @@
-function MVDR_output = MVDR_DOA(X, target_num, d_lambda, Phi_set)
+function [MVDR_output_wave, MVDR_output_degree] = MVDR_DOA(X, target_num, d_lambda, phi_step, Phi_set)
     % X: 输入信号
     % target_num: 信源数
     % d_lambda: 阵元间距波长比
@@ -7,14 +7,31 @@ function MVDR_output = MVDR_DOA(X, target_num, d_lambda, Phi_set)
 
     row = size(X, 1);
     column = size(X, 2);
-%     R = X * X' / column;
-    R = X * X';
+    R = X * X' / column;
     MVDR = zeros(1, length(Phi_set)); %初始化
+    max_loc = zeros(1, target_num);
 
     for i = 1:length(Phi_set)
         A_vector = exp(-1j * 2 * pi * (0:row -1)' * d_lambda * sind(Phi_set(i)));
-        MVDR(i) = abs((A_vector' * R ^ (-1) * A_vector) ^ (-1));
+        MVDR(i) = 1 / abs(A_vector' * R ^ (-1) * A_vector);
     end
 
-    MVDR_output = MVDR / max(MVDR);
+    MVDR_normal = MVDR / max(MVDR);
+
+    [pks, locs] = findpeaks(MVDR_normal); %寻找全部谱峰及索引
+    %[pks, id] = sort(pks);
+    %locs = locs(id(end - target_num + 1:end)) - 1;
+    %MVDR_output_degree = locs * phi_step - 90;
+
+    for j = 1:target_num
+        [~, id] = max(pks);
+        max_loc(:, j) = locs(id) -1;
+        pks(id) = -inf;
+    end %寻找前target_num个最大值及其索引并保存
+
+    MVDR_output_degree = max_loc * phi_step - 90;
+
+    MVDR_output_wave = log10(MVDR_normal);
+    MVDR_output_degree = sort(MVDR_output_degree);
+    disp('MVDR估计结果'); disp(MVDR_output_degree);
 end
