@@ -19,4 +19,4 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 2025.1.7 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim.m`。
 
-2025.1.8 增加上述三个算法的谱峰搜索搜索段。
+2025.1.8 增加上述三个算法的谱峰搜索代码段。
