@@ -3,7 +3,10 @@ function [MUSIC_output_wave, MUSIC_output_degree] = MUSIC_DOA(X, target_num, d_l
     % target_num: 信源数
     % d_lambda: 阵元间距波长比
     % Phi_set: 角度区间
-    % MUSIC_output: DOA估计谱
+    % MUSIC_output_wave: DOA估计谱
+    % MUSIC_output_degree: 估计角度
+
+    tic %计时开始
 
     row = size(X, 1); %阵元数
     column = size(X, 2); %快拍数
@@ -33,8 +36,11 @@ function [MUSIC_output_wave, MUSIC_output_degree] = MUSIC_DOA(X, target_num, d_l
 
     MUSIC_output_degree = max_loc * phi_step - 90;
 
+    toc %计时结束
+
     MUSIC_output_wave = log10(MUSIC_normal);
     MUSIC_output_degree = sort(MUSIC_output_degree);
-    disp('MUSIC估计结果'); disp(MUSIC_output_degree);
+    disp(['MUSIC估计结果：', newline, num2str(MUSIC_output_degree), newline]);
+    %disp(MUSIC_output_degree);
 
 end
