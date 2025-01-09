@@ -3,7 +3,10 @@ function [CBF_output_wave, CBF_output_degree] = CBF_DOA(X, target_num, d_lambda,
     % target_num: 信源数
     % d_lambda: 阵元间距波长比
     % Phi_set: 角度区间
-    % CBF_output: DOA估计谱
+    % CBF_output_wave: DOA估计谱
+    % CBF_output_degree: DOA估计角度
+
+    tic %计时开始
 
     row = size(X, 1); % 阵列排列
     CBF = zeros(1, length(Phi_set)); %初始化
@@ -14,8 +17,6 @@ function [CBF_output_wave, CBF_output_degree] = CBF_DOA(X, target_num, d_lambda,
         CBF(i) = abs(Weight' * (X * X') * Weight);
     end
 
-    %log_CBF = log10(CBF / max(CBF));
-    %CBF_output = (log_CBF - min(log_CBF)) / max(log_CBF - min(log_CBF));
     CBF_normal = CBF / max(CBF);
 
     [pks, locs] = findpeaks(CBF_normal); %寻找全部谱峰及索引
@@ -31,7 +32,10 @@ function [CBF_output_wave, CBF_output_degree] = CBF_DOA(X, target_num, d_lambda,
 
     CBF_output_degree = max_loc * phi_step - 90;
 
+    toc %计时结束
+
     CBF_output_wave = log10(CBF_normal);
     CBF_output_degree = sort(CBF_output_degree);
-    disp('CBF估计结果'); disp(CBF_output_degree);
+    disp(['CBF估计结果：', newline, num2str(CBF_output_degree), newline]);
+    %disp(CBF_output_degree);
 end
