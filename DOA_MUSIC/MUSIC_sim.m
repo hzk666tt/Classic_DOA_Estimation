@@ -1,15 +1,14 @@
 close all; clear all; clc;
-
-% CBF
 % ADC Parameters
-snr = 20; % input SNR (dB)
-snapshot = 512; % 快拍数
+snr = 5; % input SNR (dB)
+snapshot = 128; % 快拍数
 
 d_lambda = 0.5; % 阵元间距波长比
-target_theta = [0 6.9]; % 目标角度
-target_num = length(target_theta); % 目标角度数
+target_theta = [-1.1 9.9]; % 目标角度
+target_theta_rad = deg2rad(target_theta); % 转为弧度
+target_num = length(target_theta_rad); % 目标角度数
 RX_num = 8; % 阵元数
-RX_set = 0:1:RX_num; % 阵列排列
+RX_set = 0:1:RX_num - 1; % 阵列排列
 
 phi_start = -90; % 定义角区间起点
 phi_end = 90; % 定义角区间终点
@@ -18,7 +17,7 @@ Phi_set = phi_start:phi_step:phi_end; % 定义叫区间
 
 % generate signal
 Signal = randn(target_num, snapshot) + 1j * randn(target_num, snapshot); % 产生target_num*snapshot的随机信号
-A = exp(-1j * 2 * pi * RX_set' * d_lambda * sind(target_theta)); % 导向矩阵
+A = exp(-1j * 2 * pi * RX_set' * d_lambda * sin(target_theta_rad)); % 导向矩阵
 X = A * Signal;
 X = awgn(X, snr, 'measured'); % 加白噪声
 
