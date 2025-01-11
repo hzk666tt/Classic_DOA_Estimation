@@ -34,7 +34,7 @@ function [MUSIC_output_wave, MUSIC_output_degree] = MUSIC_DOA(X, target_num, d_l
         pks(id) = -inf;
     end %寻找前target_num个最大值及其索引并保存
 
-    MUSIC_output_degree = max_loc * phi_step - 90;
+    MUSIC_output_degree = max_loc * phi_step - (length(Phi_set) - 1) * phi_step / 2;
 
     toc %计时结束
 
