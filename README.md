@@ -7,7 +7,6 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 DOA估计结果：
 
-![DOA估计结果](./DOA_United/DOA_United_Output.svg)
 <img src="./DOA_United/DOA_United_Output.svg">
 
 ## 项目文档构成
