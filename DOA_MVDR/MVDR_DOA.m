@@ -33,7 +33,7 @@ function [MVDR_output_wave, MVDR_output_degree] = MVDR_DOA(X, target_num, d_lamb
         pks(id) = -inf;
     end %寻找前target_num个最大值及其索引并保存
 
-    MVDR_output_degree = max_loc * phi_step - 90;
+    MVDR_output_degree = max_loc * phi_step - (length(Phi_set) - 1) / 2;
 
     toc %计时结束
 
