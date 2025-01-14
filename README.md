@@ -21,15 +21,11 @@ DOA估计结果：
 
 ## 项目递交记录
 
+| 时间 | 内容 |
 | :----: | :--- |
 | 2025.1.5 | 递交`CBF_sim.m`和`DOA_CBF.m`。 |
-
 | 2025.1.6 | 递交`MVDR_sim.m`和`DOA_MVDR.m`。 |
-
 | 2025.1.7 | 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim.m`。 |
-
 | 2025.1.8 | 增加上述三个算法的谱峰搜索代码段。 |
-
 | 2025.1.9 | 递交`LTS_ESPRIT_sim.m`和`LTS_ESPRIT_DOA.m`，并为所有算法增加运行时间输出。 |
-
 | 2025.1.14 | 递交`Root_MUSIC_sim.m`、`DOA_Root_MUSIC.m`。 |
