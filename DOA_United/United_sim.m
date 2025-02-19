@@ -34,17 +34,17 @@ S_N = awgn(S, snr, 'measured');
 [result_CBF_wave, result_CBF_degree] = CBF_DOA(X_N, MIMO_Ant_num, target_num, phi_step, phi_set);
 [result_MVDR_wave, result_MVDR_degree] = MVDR_DOA(X_N, MIMO_Ant_num, snapshot, target_num, phi_step, phi_set);
 [result_MUSIC_wave, result_MUSIC_degree] = MUSIC_DOA(X_N, MIMO_Ant_num, snapshot, target_num, phi_step, phi_set);
-result_LTS_ESPRIT_degree = LTS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num);
+result_TLS_ESPRIT_degree = TLS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num);
 result_Root_MUSIC_degree = Root_MUSIC_DOA(X_N, MIMO_Ant_num, snapshot, target_num);
-result_RD_LTS_ESPRIT_degree = RD_LTS_ESPRIT_DOA(S_N, G, Tx_num, Rx_num, snapshot, target_num);
+result_RD_TLS_ESPRIT_degree = RD_TLS_ESPRIT_DOA(S_N, G, Tx_num, Rx_num, snapshot, target_num);
 %Linewidth = 1.5;
 %plot(Phi_set, result_CBF, '--', 'Linewidth', Linewidth); hold on;
 plot(phi_set, result_CBF_wave, '--', 'Color', 'r'); hold on; % 虚线，洋红
 plot(phi_set, result_MVDR_wave, '-.', 'Color', 'b'); hold on; % 实线，蓝色
 plot(phi_set, result_MUSIC_wave, '-', 'Color', 'r'); hold on; % 实线，红色
-plot(result_LTS_ESPRIT_degree, 0, 'db ', 'MarkerFaceColor', 'b'); hold on; % 圆圈，蓝色
+plot(result_TLS_ESPRIT_degree, 0, 'db ', 'MarkerFaceColor', 'b'); hold on; % 圆圈，蓝色
 plot(result_Root_MUSIC_degree, 0, 'sg', 'MarkerFaceColor', 'g'); hold on; % 圆圈，绿色
-plot(result_RD_LTS_ESPRIT_degree, 0, 'bx', 'MarkerFaceColor', 'b'); % 叉，蓝色
+plot(result_RD_TLS_ESPRIT_degree, 0, 'bx', 'MarkerFaceColor', 'b'); % 叉，蓝色
 
 xline(target_theta(1), '--', 'Color', 'k'); hold on;
 xline(target_theta(2), '--', 'Color', 'k'); hold on;
@@ -52,13 +52,13 @@ xlabel('\theta(\circ)', 'FontSize', 11); ylabel('Normalized Spectrum(dB)', 'Font
 grid on;
 
 title('\fontname{宋体}经典\fontname{Times new roman}DOA\fontname{宋体}算法性能对比');
-legend('CBF', 'MVDR', 'MUSIC', 'LTS-ESPRIT', '', 'Root-MUSIC', '', 'RD-LTS-ESPRIT', '' ...
+legend('CBF', 'MVDR', 'MUSIC', 'TLS-ESPRIT', '', 'Root-MUSIC', '', 'RD-TLS-ESPRIT', '' ...
     , ['Real \theta (', num2str(target_theta(1)), '\circ, ', num2str(target_theta(2)), '\circ)'], ...
-    '', 'Color', 'none', 'FontSize', 6); % 图例
-%legend('CBF', 'MVDR', 'MUSIC', 'LTS-ESPRIT', '', ...
+    '', 'Color', 'none', 'FontSize', 7); % 图例
+%legend('CBF', 'MVDR', 'MUSIC', 'TLS-ESPRIT', '', ...
 %    ['Real: ',num2str(target_theta(1)),'\circ/',num2str(target_theta(2)),'\circ'], '', 'Color', 'none'); % 图例
 %legend(['CBF: ',num2str(result_CBF_degree)], ['MVDR: ',num2str(result_MVDR_degree)], ...
-%    ['MUSIC: ',num2str(result_MUSIC_degree)],['LTS-ESPRIT: ',num2str(result_LTS_ESPRIT_degree')], ...
+%    ['MUSIC: ',num2str(result_MUSIC_degree)],['TLS-ESPRIT: ',num2str(result_TLS_ESPRIT_degree')], ...
 %    '',['Real:  ',num2str(target_theta(1)),'\circ/',num2str(target_theta(2)),'\circ'],'','Color', 'none'); % 图例
 set(gca, 'XTick', phi_start:15:phi_end, 'FontSize', 11); %设置横轴10°为间隔
 xlim([-45 45]);
