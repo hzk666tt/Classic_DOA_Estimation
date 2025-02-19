@@ -1,17 +1,11 @@
-function LTS_ESPRIT_output_degree = LTS_ESPRIT_DOA(X, target_num)
+function LTS_ESPRIT_output_degree = LTS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num)
     % X:                        输入信号
     % target_num:               信源数
-    % d_lambda:                 阵元间距波长比
-    % Phi_set:                  角度区间
-    % LTS_ESPRIT_output_wave:   DOA估计谱
     % LTS_ESPRIT_output_degree: 估计角度
 
     tic %计时开始
 
-    row = size(X, 1); %阵元数
-    column = size(X, 2); %快拍数
-
-    R = X * X' / column; %计算协方差矩阵
+    R = X_N * X_N' / snapshot; %计算协方差矩阵
     [R_Vector, ~] = eig(R); %计算特征向量并保存
     %[R_Vector, R_lambda] = eig(R); %计算特征向量并保存
     %[R_lambda, ID_R_lambda] = sort(diag(R_lambda));
@@ -19,8 +13,8 @@ function LTS_ESPRIT_output_degree = LTS_ESPRIT_DOA(X, target_num)
     %Us = R_Vector(:, 1:target_num);
 
     Us = R_Vector(:, end - target_num + 1:end);
-    Ux = Us(1:row - 1, :);
-    Uy = Us(2:row, :);
+    Ux = Us(1:MIMO_Ant_num - 1, :);
+    Uy = Us(2:MIMO_Ant_num, :);
 
     Uxy = [Ux, Uy];
     Uxy = Uxy' * Uxy;
