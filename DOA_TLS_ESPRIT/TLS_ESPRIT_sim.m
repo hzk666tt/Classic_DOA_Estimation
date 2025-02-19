@@ -25,8 +25,8 @@ X = A * S;
 X_N = awgn(X, snr, 'measured'); % 加白噪声
 
 % DOA estimation
-result_LTS_ESPRIT_degree = LTS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num);
-plot(result_LTS_ESPRIT_degree, 0, 'o', 'Color', 'b'); hold on;
+result_TLS_ESPRIT_degree = TLS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num);
+plot(result_TLS_ESPRIT_degree, 0, 'o', 'Color', 'b'); hold on;
 xline(target_theta(1), '--', 'Color', 'k'); hold on;
 xline(target_theta(2), '--', 'Color', 'k'); hold on;
 xlabel('\theta(\circ)'); ylabel('Normalized Spatial Spectrum(dB)');
