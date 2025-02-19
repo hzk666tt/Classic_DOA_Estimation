@@ -7,9 +7,7 @@ This project is a study record of the millimeter wave radar classic DOA estimati
 
 DOA估计结果：
 
-| DOA估计性能对比 | 估计结果及运行时间 |
-| :----:| :----: |
-| <img src="./DOA_United/DOA_United_Output.svg"> | <img src="./DOA_United/DOA_United_Output_Time.png"> |
+
 
 ## 项目文档构成
 
@@ -28,4 +26,5 @@ DOA估计结果：
 | 2025.1.7 | 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim.m`。 |
 | 2025.1.8 | 增加上述三个算法的谱峰搜索代码段。 |
 | 2025.1.9 | 递交`LTS_ESPRIT_sim.m`和`LTS_ESPRIT_DOA.m`，并为所有算法增加运行时间输出。 |
-| 2025.1.14 | 递交`Root_MUSIC_sim.m`、`DOA_Root_MUSIC.m`。 |
+| 2025.1.14 | 递交`Root_MUSIC_sim.m`、`Root_MUSIC_DOA.m`。 |
+| 2025.2.19 | 递交`RD_LTS_ESPRIT_sim.m`、`RD_LTS_ESPRIT_DOA.m`。 |
