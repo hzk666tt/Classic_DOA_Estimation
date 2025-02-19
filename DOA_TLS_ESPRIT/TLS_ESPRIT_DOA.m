@@ -1,7 +1,7 @@
-function LTS_ESPRIT_output_degree = LTS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num)
+function TLS_ESPRIT_output_degree = TLS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, target_num)
     % X:                        输入信号
     % target_num:               信源数
-    % LTS_ESPRIT_output_degree: 估计角度
+    % TLS_ESPRIT_output_degree: 估计角度
 
     tic %计时开始
 
@@ -29,10 +29,10 @@ function LTS_ESPRIT_output_degree = LTS_ESPRIT_DOA(X_N, MIMO_Ant_num, snapshot, 
     Psi = -Fx / Fy;
 
     [~, Phi] = eig(Psi);
-    LTS_ESPRIT_output_degree = rad2deg(asin(-angle(diag(Phi)) / pi));
+    TLS_ESPRIT_output_degree = rad2deg(asin(-angle(diag(Phi)) / pi));
 
     toc %计时结束
 
-    LTS_ESPRIT_output_degree = sort(LTS_ESPRIT_output_degree);
-    disp(['LTS_ESPRIT估计结果：', newline, num2str(LTS_ESPRIT_output_degree'), newline]);
+    TLS_ESPRIT_output_degree = sort(TLS_ESPRIT_output_degree);
+    disp(['TLS_ESPRIT估计结果：', newline, num2str(TLS_ESPRIT_output_degree'), newline]);
 end
