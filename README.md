@@ -10,7 +10,7 @@ DOA估计结果：
 | 对比项 | 对比结果 |
 | :----:| :----: |
 | DOA估计性能 | <img src="./DOA_United/DOA_United_Output.svg"> |
-| 估计结果及运行时间 | `CBF`>`MVDR`>`MUSIC`>`Root-MUSIC`>`RD_LTS_ESPRIT`> `LTS_ESPRIT` |
+| 估计结果及运行时间 | `CBF`>`MVDR`>`MUSIC`>`Root-MUSIC`>`RD_TLS_ESPRIT`> `TLS_ESPRIT` |
 
 ## 项目文档构成
 
@@ -28,6 +28,6 @@ DOA估计结果：
 | 2025.1.6 | 递交`MVDR_sim.m`和`DOA_MVDR.m`。 |
 | 2025.1.7 | 递交`MUSIC_sim.m`、`DOA_MUSIC.m`和`United_sim.m`。 |
 | 2025.1.8 | 增加上述三个算法的谱峰搜索代码段。 |
-| 2025.1.9 | 递交`LTS_ESPRIT_sim.m`和`LTS_ESPRIT_DOA.m`，并为所有算法增加运行时间输出。 |
+| 2025.1.9 | 递交`TLS_ESPRIT_sim.m`和`TLS_ESPRIT_DOA.m`，并为所有算法增加运行时间输出。 |
 | 2025.1.14 | 递交`Root_MUSIC_sim.m`、`Root_MUSIC_DOA.m`。 |
-| 2025.2.19 | 递交`RD_LTS_ESPRIT_sim.m`、`RD_LTS_ESPRIT_DOA.m`。 |
+| 2025.2.19 | 递交`RD_TLS_ESPRIT_sim.m`、`RD_TLS_ESPRIT_DOA.m`。 |
